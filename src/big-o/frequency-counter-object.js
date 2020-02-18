@@ -13,6 +13,7 @@ const same = (arr1, arr2) => {
   for (let e of arr1) {
     frequencyFactorObj1[e] = (frequencyFactorObj1[e] || 0) + 1;
   }
+  console.log(frequencyFactorObj1);
   for (let e of arr2) {
     frequencyFactorObj2[e] = (frequencyFactorObj2[e] || 0) + 1;
   }

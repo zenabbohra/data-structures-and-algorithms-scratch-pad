@@ -7,7 +7,7 @@
  @params {array} arr2
  @returns {boolean} result
  */
-const same = (arr1, arr2) => {
+const squareCheck = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -23,4 +23,4 @@ const same = (arr1, arr2) => {
 
 let arr1 = [1, 2, 3, 2];
 let arr2 = [1, 4, 4, 9];
-console.log('result of function is:', same(arr1, arr2)); // O(n2)
+console.log('result of function is:', squareCheck(arr1, arr2)); // O(n2)

@@ -14,6 +14,7 @@
 const isSubSequence = (str1, str2) => {
   let k = 0;
   let found;
+  if(!str1) return true;
   for (let i = 0; i < str1.length; i++) {
     found = false;
     while (k < str2.length) {
@@ -30,7 +31,19 @@ const isSubSequence = (str1, str2) => {
   }
   return true;
 };
+// More elegant code
+const isSubSequence2 = (str1, str2) => {
+  let i = 0;
+  let k = 0;
+  if(!str1) return true;
+  while (k < str2.length) {
+    if (str1[i] === str2[k]) i++;
+    if(i === str1.length) return true;
+    k++;
+  }
+  return  false;
+};
 
-let str1 = 'abc';
-let str2 = 'acb';
-console.log(isSubSequence(str1, str2));
+let str1 = 'sing';
+let str2 = 'sting';
+console.log(isSubSequence2(str1, str2));

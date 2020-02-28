@@ -6,13 +6,13 @@
  * @returns {number} sum - maximum sum of k consecutive elements in the array
  */
 //PseudoCode
-  // Calculate sum of first k elements and store it in a variable sum
-  // Declare a variable i = 0
-  // Declare a variable currentSum and initialize it to value of  sum
-  // Run a while loop from i + k to arr.length - k
-  // Update currentSum += arr[i+k] - arr[i]
-  // if currentSum > sum, then update sum to currentSum
-  // return sum at the end
+// Calculate sum of first k elements and store it in a variable sum
+// Declare a variable i = 0
+// Declare a variable currentSum and initialize it to value of  sum
+// Run a while loop from i + k to arr.length - k
+// Update currentSum += arr[i+k] - arr[i]
+// if currentSum > sum, then update sum to currentSum
+// return sum at the end
 const maxSubArraySum = (arr, num) => {
   if (num >= arr.length) return null;
   let sum = 0;

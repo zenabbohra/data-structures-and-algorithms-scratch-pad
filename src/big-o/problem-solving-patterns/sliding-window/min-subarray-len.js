@@ -1,15 +1,8 @@
-/**
- * @function minSubArrayLen - function which takes an array of positive integers and a +ve number
- * and returns the minimum length of a subarray of which the sum >= num
- * @params {array} arr
- * @params {number} num
- * @returns {number} minLen
- */
+
 //Pseudocode
   // - Check num > 0 and arr is not empty else return 0
   // - Run a loop with variable i = 0 running up to arr.length - 1 to check if any element
   // is greater than num, if found return 1
-
   // - Declare a variable i = 0 and j = 1
   // - Run a while loop as lon as j < arr.length
   // Run a for loop with variable i = 0 until i < arr.length - j
@@ -25,16 +18,22 @@ const subArraySum = (arr, j) => {
       return sum;
   };
 
-
+/**
+ * @function minSubArrayLen - function which takes an array of positive integers and a +ve number
+ * and returns the minimum length of a subarray of which the sum >= num
+ * @params {array} arr
+ * @params {number} num
+ * @returns {number} minLen
+ */
 const minSubArrayLen = (arr, num) => {
   if (num < 0 || !arr.length) return 0;
   let j = 1;
-  let sum = 0;
+  let maxSum = 0;
   let currentSum = 0;
   while (j < arr.length - 1) {
     for (let i = 0; i < arr.length - j; i++) {
       if (j === 1 && arr[i] >= num) {
-        return 1;
+        return 1; // easy peasy readability!
       } else if (j > 1 && i === 0) {
         currentSum = subArraySum(arr, j);
         if (currentSum > num) {
@@ -44,8 +43,8 @@ const minSubArrayLen = (arr, num) => {
         if (currentSum > num) return j;
       } else if (j > 1) {
         currentSum += arr[i + j] - arr[i];
-        sum = Math.max(currentSum, sum);
-        if (sum >= num) return j;
+        maxSum = Math.max(currentSum, maxSum);
+        if (maxSum >= num) return j;
       }
     }
     j++;

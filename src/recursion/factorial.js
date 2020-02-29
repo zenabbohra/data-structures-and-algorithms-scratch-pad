@@ -2,7 +2,8 @@
 Function takes an integer n and calculates its factorial using recursion
  */
 const factorialRec = (n) => {
-  if (n === 1){
+  if (n < 0) return 0;
+  if (n === 1 || n === 0){
     return 1;
   }
   return n * factorialRec(n -1);

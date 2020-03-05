@@ -1,7 +1,7 @@
 /**
  * @function findOdd - Given an array, find the integer that appears an odd number of times.
  * There will always be only one integer that appears an odd number of times.
- * @params {array} arr
+ * @param {Object[]} arr
  * @returns {number} oddInt
  */
 const findOdd = (arr) => {
